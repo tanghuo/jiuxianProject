@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit(); $user="root"; $pass="123456789"; $PDO=new PDO("mysql:host=localhost;dbname=jiuxian",$user,$pass); $query="select * from user LIMIT 15"; $temp=$PDO->prepare($query); $temp->execute(); $result=$temp->fetchAll(PDO::FETCH_ASSOC); echo json_encode($result); ?>

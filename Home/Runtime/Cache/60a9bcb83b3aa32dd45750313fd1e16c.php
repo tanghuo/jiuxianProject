@@ -1,0 +1,2 @@
+<?php if (!defined('THINK_PATH')) exit(); session_start(); try{ $user="root"; $pass="123456789"; $PDO=new PDO("mysql:host=localhost;dbname=jiuxian",$user,$pass); $PDO->beginTransaction(); $query="delete from user_cart 
+				where user_id=? and item_id =?"; $temp=$PDO->prepare($query); $temp->bindParam(1, $userid); $temp->bindParam(1, $item_id); var_dump($_GET); $PDO->commit(); }catch(PDOException $e) { echo 'Connection failed: ' . $e->getMessage(); } ?>
